@@ -1,12 +1,15 @@
 {
-  "name": "@tdotcode/root",
+  "name": "@perfios/root",
   "private": true,
   "devDependencies": {
     "craco": "^0.0.3",
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "start": "lerna exec --scope @tdotcode/app -- yarn start"
+    "start:app": "lerna exec --scope @perfios/app -- yarn start",
+    "start:redirection": "lerna exec --scope @perfios/redirection -- yarn start",
+    "build:app": "lerna exec --scope @perfios/app -- yarn build",
+    "build:redirection": "lerna exec --scope @perfios/redirection -- yarn build"
   },
   "workspaces": {
     "packages": [

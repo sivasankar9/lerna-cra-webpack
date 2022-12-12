@@ -1,5 +1,5 @@
 {
-  "name": "@perfios/app",
+  "name": "@perfios/redirection",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
