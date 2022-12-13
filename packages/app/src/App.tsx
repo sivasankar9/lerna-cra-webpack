@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import { Button, Text } from "@perfios/components";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Text lable="Your count is" />{count}
-        <Button onClick={() => setCount((prev) => ++prev) }  lable="App"/>
+        <Button onClick={() => setCount((prev) => ++prev) }  lable="App cnt"/>
       </header>
     </div>
   );
