@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Button, Text } from "@todcode/components";
+import { Button, Text } from "@perfios/components";
 
 function App() {
   const [count, setCount] = useState(0);
