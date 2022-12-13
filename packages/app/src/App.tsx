@@ -12,7 +12,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Text lable="Your count is" />{count}
-        <Button onClick={() => setCount((prev) => ++prev) }  lable="App cnt"/>
+        <Button onClick={() => {
+          setCount((prev) => ++prev)
+          debugger;
+        } }  lable="Apps cnt"/>
       </header>
     </div>
   );
