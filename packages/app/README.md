@@ -1,6 +1,6 @@
 # The Project
 
-This code created for article: [React app with Typescript and custom Webpack config)
+This code created for article: [React app with Typescript and custom Webpack config](https://medium.com/@evheniybystrov/react-app-with-typescript-and-custom-webpack-config-e0e110a61615)
 
 ## Installation
 
