@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Anumati-AA-version</title>
+    <link
+      rel="shortcut icon"
+      href="/static/images/favicon.ico"
+    />
+    <meta
+      name="viewport"
+      content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#2a3991" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script type="text/javascript">
+      (function (i, s, o, g, r, a, m, n) {
+        i.moengage_object = r;
+        t = {};
+        q = function (f) {
+          return function () {
+            (i.moengage_q = i.moengage_q || []).push({
+              f: f,
+              a: arguments,
+            });
+          };
+        };
+        (f = [
+          'track_event',
+          'add_user_attribute',
+          'add_first_name',
+          'add_last_name',
+          'add_email',
+          'add_mobile',
+          'add_user_name',
+          'add_gender',
+          'add_birthday',
+          'destroy_session',
+          'add_unique_user_id',
+          'moe_events',
+          'call_web_push',
+          'track',
+          'location_type_attribute',
+        ]),
+          (h = { onsite: ['getData', 'registerCallback'] });
+        for (k in f) {
+          t[f[k]] = q(f[k]);
+        }
+        for (k in h)
+          for (l in h[k]) {
+            null == t[k] && (t[k] = {}),
+              (t[k][h[k][l]] = q(k + '.' + h[k][l]));
+          }
+        a = s.createElement(o);
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+        i.moe =
+          i.moe ||
+          function () {
+            n = arguments[0];
+            return t;
+          };
+        a.onload = function () {
+          if (n) {
+            i[r] = moe(n);
+          }
+        };
+      })(
+        window,
+        document,
+        'script',
+        'https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js',
+        'Moengage'
+      );
+
+      const isProductionMachine =
+        window.location.href.indexOf(
+          'https://app.anumati.co.in'
+        ) > -1;
+
+      window.MoEngage = moe({
+        app_id: 'ERIDNXT70RNH76U4FYN7RJ3O', // here goes your App Id
+        debug_logs: isProductionMachine ? 0 : 1,
+        cluster: 'DC_3',
+        //swPath: '/static/images/sw.js',
+        //swScope: '/'
+      });
+
+      window.onerror = function (msg, url, line) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/aa/api/v1/logJSError', true);
+        xhr.setRequestHeader(
+          'Content-Type',
+          'application/json'
+        );
+        xhr.send(
+          JSON.stringify({
+            message: msg,
+            url: url,
+            line: line,
+            userAgent: navigator.userAgent,
+          })
+        );
+      };
+
+      function onLoginOTPRead(otp) {
+        window['otp'] = String(otp);
+        console.log('OTP is :' + otp);
+      }
+    </script>
+  </head>
+
+  <body>
+    <noscript
+      >You need to enable JavaScript to run this
+      app.</noscript
+    >
+    <script>
+      const isWebRedirection =
+        window.location.href.indexOf('web-redirect') > -1;
+
+      if (!isWebRedirection && window.innerWidth > 767) {
+        var body = document.getElementsByTagName('body')[0];
+
+        const script = chatbotScript();
+        body.appendChild(script);
+      }
+
+      function chatbotScript() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src =
+          'https://perfios-aa-uat.allincall.in/files/deploy/embed_chatbot_1.js';
+        script.async = true;
+        script.defer = true;
+
+        return script;
+      }
+    </script>
+
+    <div id="root"></div>
+    <!--script
+      type="text/javascript"
+      src="https://perfios-aa-uat.allincall.in/files/deploy/embed_chatbot_1.js"
+      async defer></script-->
+  </body>
+</html>

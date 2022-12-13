@@ -13,10 +13,6 @@ export const css: webpack.RuleSetRule = {
   loader: 'css-loader',
   options: {
     sourceMap: true,
-    importLoaders: 2,
-    modules: {
-      localIdentName: '[path][name]__[local]--[hash:base64:5]',
-    },
   },
 };
 

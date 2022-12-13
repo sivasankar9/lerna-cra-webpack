@@ -4,27 +4,28 @@ import * as webpack from 'webpack';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+const path = require('path');
 
-import html from './html';
+// import html from './html';
 
 process.env.PUBLIC_PATH = process.env.PUBLIC_PATH || '/';
 
 const client: webpack.WebpackPluginInstance[] = [
   new HtmlWebpackPlugin({
-    templateContent: html(),
-    hash: true,
-    minify: {
-      removeComments: true,
-      collapseWhitespace: true,
-      removeAttributeQuotes: false,
-      minifyJS: true,
-      minifyCSS: true,
-    },
+    // plugin for inserting scripts automatically into html
+    template: path.resolve(
+      __dirname,
+      './studio/local/index.html'
+    ),
+    filename: 'index.html',
   }),
+
+  
   new MiniCssExtractPlugin({
-    filename: '[name].[contenthash].css',
-    chunkFilename: '[id].[contenthash].css',
-  }) as unknown as webpack.WebpackPluginInstance,
+    // plugin for controlling how compiled css will be outputted and named
+    filename: '[name].css',
+    chunkFilename: '[id].css',
+  }),
 ];
 
 if (process.env.NODE_ENV === 'production') {
