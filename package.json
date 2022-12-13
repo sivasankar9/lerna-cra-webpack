@@ -7,6 +7,7 @@
   },
   "scripts": {
     "start:app": "lerna exec --scope @perfios/app -- yarn start",
+    "start:test": "lerna exec --scope @perfios/test -- yarn start",
     "start:redirection": "lerna exec --scope @perfios/redirection -- yarn start",
     "build:app": "lerna exec --scope @perfios/app -- yarn build",
     "build:redirection": "lerna exec --scope @perfios/redirection -- yarn build"
