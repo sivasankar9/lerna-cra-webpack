@@ -1,0 +1,3 @@
+*,*::before,*::after{box-sizing:border-box}html,body{margin:0;font-family:Roboto,sans-serif;font-size:24px;background-color:#122;color:#eff}
+.calculator{display:flex;flex-direction:column;border:1px solid #444;padding:20px}.calculator input[type=number],.calculator button{font-family:inherit;font-size:inherit}.calculator__row{margin-bottom:20px}
+.app{margin:0 auto;padding:20px;max-width:800px;text-align:center}
