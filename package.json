@@ -1,19 +1,56 @@
 {
-  "name": "@perfios/root",
+  "name": "myproject",
+  "version": "1.0.0",
   "private": true,
-  "devDependencies": {
-    "craco": "^0.0.3",
-    "lerna": "^4.0.0"
+  "engines": {
+    "node": ">=14"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.1.9",
+    "@types/jest": "^26.0.23",
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "eslint": "^7.30.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-with-typescript": "^20.0.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.6",
+    "lerna": "^4.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.5"
   },
   "scripts": {
-    "start:app": "lerna exec --scope @perfios/app -- yarn start",
-    "start:redirection": "lerna exec --scope @perfios/redirection -- yarn start",
-    "build:app": "lerna exec --scope @perfios/app -- yarn build",
-    "build:redirection": "lerna exec --scope @perfios/redirection -- yarn build"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/**"
-    ]
+    "postinstall": "npm run bootstrap",
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "lint": "npm run lint-ts && npm run lint-scss",
+    "lint-ts": "eslint .",
+    "lint-ts-fix": "eslint . --fix",
+    "lint-scss": "stylelint \"**/*.scss\"",
+    "lint-scss-fix": "stylelint \"**/*.scss\" --fix",
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "test-coverage": "jest --coverage",
+    "ci": "npm run lint && npm run test-coverage",
+    "start:app": "lerna exec --scope @myproject/website -- yarn dev",
+    "build:app": "lerna exec --scope @myproject/website -- yarn build"
   }
 }
