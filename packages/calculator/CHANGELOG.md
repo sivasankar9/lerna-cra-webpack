@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/sivasankar9/lerna-cra-webpack/compare/@myproject/calculator@1.2.4...@myproject/calculator@1.3.0) (2022-12-21)
+
+
+### Features
+
+* style red ([ef4176b](https://github.com/sivasankar9/lerna-cra-webpack/commit/ef4176b8fd487f650d294e19339cf2c966fea8b4))
+
+
+
+
+
 ## [1.2.4](https://github.com/sivasankar9/lerna-cra-webpack/compare/@myproject/calculator@1.2.2...@myproject/calculator@1.2.4) (2022-12-21)
 
 
