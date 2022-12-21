@@ -1,9 +1,9 @@
 .calculator {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  border: 1px solid black;
     font-family:'Courier New', Courier, monospace;
-    padding: 20px;
+  padding: 20px;
 
   input[type="number"],
   button {
