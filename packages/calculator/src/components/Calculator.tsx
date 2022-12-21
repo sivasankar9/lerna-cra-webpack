@@ -11,6 +11,7 @@ const Calculator = (): ReactElement => {
 
   return (
     <div className='calculator'>
+    <div>
       <header>
         <h2>Calculator</h2>
       </header>
@@ -38,6 +39,7 @@ const Calculator = (): ReactElement => {
       </div>
       <div className='calculator__row'>
         Result: <b id='result'>{result}</b>
+      </div>
       </div>
     </div>
   );
